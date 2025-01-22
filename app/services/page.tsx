@@ -4,7 +4,7 @@ const services = () => {
     return (
         <section className='flexCenter flex-col'>
             {/** Thumbnail */}
-            <div className='padding-container max-container w-full pb-24'>
+            <div className=' max-container w-full pb-24'>
                 <div className='max-container relative w-full pb-24'>
                     <div className='flexCenter relative w-full h-[400px]'>
                         <Image
