@@ -4,7 +4,7 @@ export const NAV_LINKS = [
     { href: "/", key: "how_hilink_work", label: "How Hilink Work?" },
     { href: "/services", key: "services", label: "Services" },
     { href: "/camps", key: "pricing", label: "Pricing" },
-    { href: "/", key: "contact_us", label: "Contact Us" },
+    { href: "/contact", key: "contact_us", label: "Contact Us" },
 ];
 
 // CAMP SECTION
@@ -69,7 +69,25 @@ export const FOOTER_CONTACT_INFO = {
     ],
 };
 
+// export const SOCIALS = {
+//     title: "Social",
+//     links: ["/facebook.svg", "/instagram.svg", "/twitter.svg", "/youtube.svg", "/wordpress.svg"],
+//     href: [
+//         "https://www.facebook.com/",
+//         "https://www.instagram.com/",
+//         "https://www.twitter.com/",
+//         "https://www.youtube.com/",
+//         "https://www.wordpress.com/",
+//     ],
+// };
+
 export const SOCIALS = {
     title: "Social",
-    links: ["/facebook.svg", "/instagram.svg", "/twitter.svg", "/youtube.svg", "/wordpress.svg"],
+    media: [
+        { title: "Facebook", links: "/facebook.svg", href: "https://www.facebook.com/" },
+        { title: "LinkedIn", links: "/wordpress.svg", href: "https://www.linkedin.com/" },
+        { title: "Twitter", links: "/twitter.svg", href: "https://www.twitter.com/" },
+        { title: "YouTube", links: "/youtube.svg", href: "https://www.youtube.com/" },
+        { title: "Instagram", links: "/instagram.svg", href: "https://www.instagram.com/" },
+    ],
 };

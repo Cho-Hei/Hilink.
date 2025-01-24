@@ -15,7 +15,7 @@ import {
     Plus,
     Users,
     UsersThree,
-} from "@phosphor-icons/react";
+} from "@phosphor-icons/react/dist/ssr";
 import { DateRangePicker } from "react-date-range";
 import Button from "@/components/Button";
 import { useCallback, useEffect, useState } from "react";

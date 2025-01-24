@@ -12,7 +12,7 @@ import {
     PawPrint,
     Recycle,
     SpeakerSlash,
-} from "@phosphor-icons/react";
+} from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import testimonialData from "@/data/Testimonial.json";
 import { DateRangePicker } from "react-date-range";

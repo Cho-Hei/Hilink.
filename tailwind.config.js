@@ -8,6 +8,18 @@ module.exports = {
     theme: {
         extend: {
             colors: {
+                primary: "#30AF5B",
+                "primary-hover": "#292C27",
+                black: "#382C28",
+                variant1: "#776E6B",
+                variant2: "#B4ABA8",
+                white: "#ffffff",
+                outline: "#E4E4E4",
+                surface: "#F8F8F8",
+                red: "#C72929",
+                success: "#37B853",
+                line: "#E9E9E9",
+
                 green: {
                     50: "#30AF5B",
                     90: "#292C27",
@@ -49,6 +61,7 @@ module.exports = {
                 "5xl": "40px",
             },
         },
+
         container: {
             padding: {
                 DEFAULT: "16px",

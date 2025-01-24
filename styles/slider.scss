@@ -62,7 +62,6 @@
 
         &::before {
             font-size: 64px;
-            font-family: '__DM_Sans_6ff133';
             opacity: 1;
             color: var(--variant1);
             position: absolute;
@@ -86,7 +85,7 @@
             left: 40px;
 
             &::before {
-                content: '<';
+                content: "<";
                 padding-right: 3px;
             }
         }
@@ -95,7 +94,7 @@
             right: 40px;
 
             &::before {
-                content: '>';
+                content: ">";
                 padding-left: 3px;
             }
         }
