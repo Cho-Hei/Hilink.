@@ -11,7 +11,7 @@ type CampsProps = {
 
 const Camps = ({ start, end }: CampsProps) => {
     return (
-        <section>
+        <section className='pb-24'>
             <div className='lg:pt-20 md:pt-14 pt-10'>
                 <div className='container'>
                     <div className='flexCenter flex-col w-full'>
@@ -25,11 +25,11 @@ const Camps = ({ start, end }: CampsProps) => {
                             <Campitem key={item.id} data={item} type='default' />
                         ))}
                     </div>
-                    <div className='button-block w-full text-center md:mt-10 mt-6'>
+                    {/* <div className='button-block w-full text-center md:mt-10 mt-6'>
                         <Link href={"/camp/topmap-grid"} className='button-main'>
                             View All Camp
                         </Link>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section>
