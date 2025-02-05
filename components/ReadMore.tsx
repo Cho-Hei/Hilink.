@@ -1,3 +1,4 @@
+// https://medium.com/@filipepfluckdev/creating-a-read-more-component-in-react-4afd1d17d40b
 "use client";
 
 import { useState } from "react";

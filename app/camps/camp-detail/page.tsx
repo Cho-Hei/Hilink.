@@ -7,15 +7,13 @@ import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 import Campsdata from "@/data/Camps.json";
 import { TentType } from "@/type/TentType";
-import { ShareIcon } from "@heroicons/react/20/solid";
-import Link from "next/link";
-import { MapPinIcon } from "@heroicons/react/24/outline";
-import { ReadMore } from "@/components/ReadMore";
+import { addDays } from "date-fns";
+import Campinfo from "@/components/Campinfo";
+import CampSidebar from "@/components/CampSidebar";
 
 const CampDetail = () => {
     const params = useSearchParams();
     const campID = params.get("id");
-    const [isExpanded, setIsExpanded] = useState(false);
 
     const CAMP = Campsdata.find((camp) => camp.id === campID) as TentType;
 
@@ -70,6 +68,14 @@ const CampDetail = () => {
         ],
     };
 
+    const [range, setRange] = useState([
+        {
+            startDate: new Date(),
+            endDate: addDays(new Date(), 7),
+            key: "selection",
+        },
+    ]);
+
     return (
         <section>
             <div className='camp-slider overflow-hidden pb-6'>
@@ -88,46 +94,12 @@ const CampDetail = () => {
                     ))}
                 </Slider>
             </div>
-            <div className='camp-detail'>
+
+            <div className='content-detail lg:py-20 md:py-14 py-10'>
                 <div className='container'>
                     <div className='flex max-lg:flex-col-reverse gap-y-10 justify-between'>
-                        <div className='w-full xl:w-2/3 lg:w-[60%] lg:pr-[15px]'>
-                            <div className='flex items-center justify-between gap-6'>
-                                <div className='heading3'>{CAMP.name}</div>
-                                <ShareIcon className='text-variant1 h-8 w-8' />
-                            </div>
-                            <div className='flex items-center gap-4 flex-wrap gap-y-1 mt-2'>
-                                <div className='flex items-center gap-1.5'>
-                                    <MapPinIcon className='text-variant1 h-6 w-6' />
-                                    <span className='text-variant1 capitalize'>
-                                        {CAMP.location}
-                                    </span>
-                                </div>
-                                <Link
-                                    href={`http://maps.google.com/?q=${CAMP.locationMap.lat},${CAMP.locationMap.lng}`}
-                                    target='_blank'
-                                    className='text-primary underline'>
-                                    Show on map
-                                </Link>
-                            </div>
-                            <div className='desc lg:mt-10 mt-6 lg:pt-10 pt-6 border-t border-outline'>
-                                <div className='heading5'>Description</div>
-                                <ReadMore
-                                    id='read-more'
-                                    text={CAMP.shortDesc + " " + CAMP.description}
-                                />
-                                {/* <div className='body2 text-variant1 mt-3'>{CAMP.shortDesc}</div>
-                                <div
-                                    className={`body2 text-variant1 ${isExpanded ? "" : "hidden"}`}>
-                                    {CAMP.description}
-                                </div>
-                                <div
-                                    className='text-button-sm underline inline-block duration-300 cursor-pointer mt-3 hover:text-primary'
-                                    onClick={() => setIsExpanded((isExpanded) => !isExpanded)}>
-                                    {isExpanded ? <>Hidden less</> : <>View More</>}
-                                </div> */}
-                            </div>
-                        </div>
+                        <Campinfo camp={CAMP} daterange={range} setDaterange={setRange} />
+                        <CampSidebar camp={CAMP} range={range} setRange={setRange} />
                     </div>
                 </div>
             </div>

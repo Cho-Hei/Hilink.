@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import { useState } from "react";
 import Button from "./Button";
 import Link from "next/link";
 import Model from "./Model";
@@ -82,7 +82,7 @@ const Intro = () => {
                 <YouTube videoId='EJr3uAQwGek' opts={opts} onReady={onPlayerReady} />
             </Model>
 
-            <div className='relative flex flex-1 items-start '>
+            <div className='relative flex flex-1 items-start'>
                 <div className='relative flex z-20 w-[268px] flex-col gap-8 rounded-3xl bg-green-90 px-7 py-8'>
                     <div className='flex flex-col'>
                         <div className='flexBetween'>

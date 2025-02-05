@@ -43,9 +43,14 @@ const Footer = () => {
                         <div className='flex flex-col gap-5'>
                             <FooterColumn title={SOCIALS.title}>
                                 <ul className='regular-14 flex gap-4 text-gray-30'>
-                                    {SOCIALS.links.map((link) => (
-                                        <Link href='/' key={link}>
-                                            <Image src={link} alt='logo' width={24} height={24} />
+                                    {SOCIALS.media.map((media) => (
+                                        <Link href={media.href} key={media.title}>
+                                            <Image
+                                                src={media.links}
+                                                alt='logo'
+                                                width={24}
+                                                height={24}
+                                            />
                                         </Link>
                                     ))}
                                 </ul>

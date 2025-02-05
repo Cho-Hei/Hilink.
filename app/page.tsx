@@ -5,13 +5,13 @@ import Guide from "@/components/Guide";
 import Intro from "@/components/Intro";
 
 export default function Home() {
-  return (
-    <>
-      <Intro />
-      <Camp />
-      <Guide />
-      <Features />
-      <GetApp />
-    </>
-  );
+    return (
+        <section className='relative overflow-hidden'>
+            <Intro />
+            <Camp />
+            <Guide />
+            <Features />
+            <GetApp />
+        </section>
+    );
 }
