@@ -1,12 +1,6 @@
 import Campitem from "@/components/Campitem";
 import Campsdata from "@/data/Camps.json";
 
-// interface CampsProps {
-//     // data: Array<TentType>;
-//     start: number;
-//     end: number;
-// }
-
 const page = () => {
     return (
         <section className='pb-24'>

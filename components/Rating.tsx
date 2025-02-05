@@ -1,5 +1,4 @@
 import { Star } from "@phosphor-icons/react";
-import React from "react";
 
 interface RatingProps {
     currentRate: number | undefined;

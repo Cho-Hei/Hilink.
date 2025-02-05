@@ -68,18 +68,6 @@ export const FOOTER_CONTACT_INFO = {
     ],
 };
 
-// export const SOCIALS = {
-//     title: "Social",
-//     links: ["/facebook.svg", "/instagram.svg", "/twitter.svg", "/youtube.svg", "/wordpress.svg"],
-//     href: [
-//         "https://www.facebook.com/",
-//         "https://www.instagram.com/",
-//         "https://www.twitter.com/",
-//         "https://www.youtube.com/",
-//         "https://www.wordpress.com/",
-//     ],
-// };
-
 export const SOCIALS = {
     title: "Social",
     media: [

@@ -1,12 +1,6 @@
 import Marquee from "./marquee";
 import { TestimonialType as Testimonial } from "@/type/TestimonialType";
 
-// interface Testimonial {
-//     name: string;
-//     image: string;
-//     description: string;
-// }
-
 interface TestimonialProps {
     data: Testimonial[];
 }
