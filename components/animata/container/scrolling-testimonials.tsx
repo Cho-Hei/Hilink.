@@ -12,7 +12,7 @@ interface TestimonialProps {
 }
 
 function TestimonialCard({
-    testimonial: { avatar, name, description },
+    testimonial: { avatar, name, description, position },
 }: {
     testimonial: Testimonial;
 }) {
@@ -26,7 +26,7 @@ function TestimonialCard({
             <div className='px-4 py-2'>
                 <span className='block text-lg font-bold text-foreground'>{name}</span>
                 <span className='-mt-1 mb-1 block text-sm font-medium leading-loose text-muted-foreground'>
-                    Founder of BAC
+                    {position}
                 </span>
                 <span className='block text-sm text-foreground'>{description} </span>
             </div>

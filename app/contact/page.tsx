@@ -45,7 +45,7 @@ const page = () => {
                                     <div className='item flex items-center gap-6'>
                                         <Link href='mailto:'>
                                             <div className='flex items-center justify-center w-12 h-12 bg-primary flex-shrink-0 rounded-full'>
-                                                <EnvelopeSimpleOpen className='text-white text-2xl' />
+                                                <EnvelopeSimpleOpen className='text-black text-2xl' />
                                             </div>
                                         </Link>
                                         <div className='w-px h-12 bg-outline'></div>
@@ -53,14 +53,14 @@ const page = () => {
                                     </div>
                                     <div className='item flex items-center gap-6 mt-5'>
                                         <div className='flex items-center justify-center w-12 h-12 bg-primary flex-shrink-0 rounded-full'>
-                                            <Phone className='text-white text-2xl' />
+                                            <Phone className='text-black text-2xl' />
                                         </div>
                                         <div className='w-px h-12 bg-outline'></div>
                                         <div className='body2'>123-456-7890</div>
                                     </div>
                                     <div className='item flex items-center gap-6 mt-5'>
                                         <div className='flex items-center justify-center w-12 h-12 bg-primary flex-shrink-0 rounded-full'>
-                                            <MapPinLine className='text-white text-2xl' />
+                                            <MapPinLine className='text-black text-2xl' />
                                         </div>
                                         <div className='w-px h-12 bg-outline'></div>
                                         <div className='body2'>

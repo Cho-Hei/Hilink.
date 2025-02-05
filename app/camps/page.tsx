@@ -1,15 +1,13 @@
 import Campitem from "@/components/Campitem";
-import { TentType } from "@/type/TentType";
-import Link from "next/link";
 import Campsdata from "@/data/Camps.json";
 
-type CampsProps = {
-    // data: Array<TentType>;
-    start: number;
-    end: number;
-};
+// interface CampsProps {
+//     // data: Array<TentType>;
+//     start: number;
+//     end: number;
+// }
 
-const Camps = ({ start, end }: CampsProps) => {
+const page = () => {
     return (
         <section className='pb-24'>
             <div className='lg:pt-20 md:pt-14 pt-10'>
@@ -21,7 +19,7 @@ const Camps = ({ start, end }: CampsProps) => {
                         </h2>
                     </div>
                     <div className='list-cate grid lg:grid-cols-4 md:grid-cols-3 min-[360px]:grid-cols-2 lg:gap-[30px] gap-4 gap-y-7 md:mt-10 mt-6'>
-                        {Campsdata.slice(start, end).map((item) => (
+                        {Campsdata.map((item) => (
                             <Campitem key={item.id} data={item} type='default' />
                         ))}
                     </div>
@@ -36,4 +34,4 @@ const Camps = ({ start, end }: CampsProps) => {
     );
 };
 
-export default Camps;
+export default page;

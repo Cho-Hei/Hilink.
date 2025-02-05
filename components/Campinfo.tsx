@@ -23,6 +23,7 @@ import { TentType } from "@/type/TentType";
 import { DateRangeType } from "@/type/DateRangeType";
 import dynamic from "next/dynamic";
 import Button from "./Button";
+import { addDays } from "date-fns";
 const ExploreCamp = dynamic(() => import("@/components/ExploreCamp"), { ssr: false });
 
 interface CampinfoProps {
@@ -145,6 +146,7 @@ const Campinfo = ({ camp, daterange, setDaterange }: CampinfoProps) => {
                         className={`form-date-picker style-detail w-full border border-outline rounded-none open`}
                         onChange={(item) => setDaterange([item.selection] as any)}
                         minDate={new Date()}
+                        maxDate={addDays(new Date(), 365)}
                         moveRangeOnFirstSelection={false}
                         months={2}
                         ranges={daterange}

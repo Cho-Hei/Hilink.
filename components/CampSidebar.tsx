@@ -21,6 +21,7 @@ import Button from "@/components/Button";
 import { useCallback, useEffect, useState } from "react";
 import { TentType } from "@/type/TentType";
 import { DateRangeType } from "@/type/DateRangeType";
+import { addDays } from "date-fns";
 
 interface GuestType {
     adult: number;
@@ -43,6 +44,8 @@ const CampSidebar = ({ camp, range, setRange }: CampSidebarProps) => {
         cleaning: 40,
         service: 60,
         price: camp.price,
+        adult: 100,
+        children: 50,
     };
 
     const [guest, setGuest] = useState<GuestType>({
@@ -161,6 +164,8 @@ const CampSidebar = ({ camp, range, setRange }: CampSidebarProps) => {
                                 className={`form-date-picker box-shadow ${openDate ? "open" : ""}`}
                                 onChange={(item) => setRange([item.selection] as any)}
                                 moveRangeOnFirstSelection={false}
+                                minDate={new Date()}
+                                maxDate={addDays(new Date(), 365)}
                                 months={2}
                                 ranges={range}
                                 direction='horizontal'
@@ -317,6 +322,25 @@ const CampSidebar = ({ camp, range, setRange }: CampSidebarProps) => {
                                     {dayStay} x ${fee.price}
                                 </div>
                             </div>
+                            {guest.adult > 0 && (
+                                <div className='flex items-center justify-between'>
+                                    <div>{guest.adult} adult(s)</div>
+
+                                    <div className='text-button'>
+                                        {guest.adult} x ${fee.adult}
+                                    </div>
+                                </div>
+                            )}
+                            {guest.children > 0 && (
+                                <div className='flex items-center justify-between'>
+                                    <div>{guest.children} children(s)</div>
+
+                                    <div className='text-button'>
+                                        {guest.children} x ${fee.children}
+                                    </div>
+                                </div>
+                            )}
+
                             <div className='flex items-center justify-between mt-1'>
                                 <div>Cleaning Fee</div>
                                 <div className='text-button'>${fee.cleaning}</div>
@@ -329,7 +353,12 @@ const CampSidebar = ({ camp, range, setRange }: CampSidebarProps) => {
                         <div className='total-block mt-5 pt-5 border-t border-outline flex items-center justify-between'>
                             <div className='heading6'>Total:</div>
                             <div className='heading5'>
-                                ${dayStay * fee.price + fee.cleaning + fee.service}
+                                $
+                                {dayStay * fee.price +
+                                    guest.adult * fee.adult +
+                                    guest.children * fee.children +
+                                    fee.cleaning +
+                                    fee.service}
                             </div>
                         </div>
                         <Button type='button' title='Book Camp' variant='btn_green mt-5' full />

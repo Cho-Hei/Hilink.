@@ -51,27 +51,27 @@ const services = () => {
                 </p>
             </div>
 
-            <div className='flexCenter flex-col py-5'>
-                <div className='absolute h-screen w-screen bg-pattern-3 opacity-40 bg-cover bg-center -z-10' />
+            <div className='flexCenter flex-col py-5 max-container padding-container'>
+                <div className='absolute right-1 h-screen w-screen bg-pattern-3 opacity-40 bg-cover bg-center -z-10' />
                 <h2 className='w-full bold-40 lg:bold-56 my-4 md:text-center text-left'>
                     How to Book?
                 </h2>
                 <Image src='/campgroundBooking.png' alt='campbooking' width={500} height={650} />
             </div>
 
-            <div className='text-left'>
-                <h2 className='w-full bold-40 lg:bold-56 my-4 md:text-center'>
+            <div className='flexCenter flex-col max-container padding-container gap-5 md:gap-10 py-12 text-left'>
+                <h2 className='bold-32 md:bold-40 lg:bold-56 my-4 text-center'>
                     Trusted by thousands of campers
                 </h2>
-                <ScrollingTestimonials data={Testimonials} />
             </div>
+            <ScrollingTestimonials data={Testimonials} />
 
             <div className='flexCenter flex-col max-container padding-container gap-5 md:gap-10 py-12'>
-                <h2 className='w-full bold-32 md:bold-40 lg:bold-56 my-4 md:text-center'>
+                <h2 className='w-full bold-32 md:bold-40 lg:bold-56 my-4 text-center'>
                     Start your camping journey today!
                 </h2>
                 <Link href='/camps'>
-                    <Button title='Book Now' variant='btn_green' type='button' />
+                    <Button title='Camp Now' variant='btn_green' type='button' />
                 </Link>
             </div>
         </section>
