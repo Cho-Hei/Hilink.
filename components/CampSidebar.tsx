@@ -131,6 +131,29 @@ const CampSidebar = ({ camp, range, setRange }: CampSidebarProps) => {
         console.log(diffDays);
     }, [range]);
 
+    const handlePayment = async (CampData: TentType) => {
+        const res = await fetch("/api/checkout_session", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                name: CampData.name,
+                price:
+                    dayStay * fee.price +
+                    guest.adult * fee.adult +
+                    guest.children * fee.children +
+                    fee.cleaning +
+                    fee.service,
+            }),
+        });
+
+        const response = await res.json();
+
+        // window.location.href = response;
+        window.location.href = response.url;
+    };
+
     return (
         <div className='sidebar xl:w-1/3 lg:w-[40%] lg:pl-[45px] w-full overflow-visible'>
             <StickyBox offsetTop={20}>
@@ -361,7 +384,13 @@ const CampSidebar = ({ camp, range, setRange }: CampSidebarProps) => {
                                     fee.service}
                             </div>
                         </div>
-                        <Button type='button' title='Book Camp' variant='btn_green mt-5' full />
+                        <Button
+                            type='button'
+                            title='Book Camp'
+                            variant='btn_green mt-5'
+                            onClick={() => handlePayment(camp)}
+                            full
+                        />
                     </div>
                 </div>
 
