@@ -5,11 +5,7 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
     try {
         const session_id = params.id;
-        // const session_id = await req.json();
-        console.log(session_id + " is the ID");
-        console.log(
-            "Fetching checkout session............................................................."
-        );
+        // console.log(session_id + " is the ID");
         if (!session_id.startsWith("cs_")) {
             throw Error("Incorrect CheckoutSession ID.");
         }

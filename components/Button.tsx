@@ -7,17 +7,26 @@ type ButtonProps = {
     icon?: string;
     variant: string;
     full?: boolean;
+    disabled?: boolean;
     onClick?: () => void;
 };
 
-const Button = ({ type, title, icon, variant, full, onClick }: ButtonProps) => {
+const Button = ({ type, title, icon, variant, full, disabled, onClick }: ButtonProps) => {
     return (
         <button
-            className={`flexCenter gap-3 p-6 rounded-full border ${variant} ${full && "w-full"}`}
+            className={`flexCenter gap-3 p-6 rounded-full border ${variant} ${full && "w-full"} ${
+                disabled && "opacity-50 cursor-not-allowed"
+            }`}
             type={type}
+            disabled={disabled}
             onClick={onClick}>
             {icon && <Image src={icon} alt={title} width={24} height={24} />}
-            <label className='bold-16 whitespace-nowrap cursor-pointer'>{title}</label>
+            <label
+                className={`bold-16 whitespace-nowrap ${
+                    disabled ? "cursor-not-allowed" : "cursor-pointer"
+                }`}>
+                {title}
+            </label>
         </button>
     );
 };

@@ -131,6 +131,7 @@ const CampSidebar = ({ camp, range, setRange }: CampSidebarProps) => {
         console.log(diffDays);
     }, [range]);
 
+    // Handle payment process to stripe
     const handlePayment = async (CampData: TentType) => {
         const res = await fetch("/api/checkout_session", {
             method: "POST",
@@ -204,7 +205,7 @@ const CampSidebar = ({ camp, range, setRange }: CampSidebarProps) => {
                                         <div className='text-button'>Guest</div>
                                     </div>
                                     <div className='body2 mt-1'>
-                                        {guest.adult} adults - {guest.children} childrens
+                                        {guest.adult} adult(s) - {guest.children} children(s)
                                     </div>
                                 </div>
                                 <CaretDown className='text-2xl' />
@@ -339,7 +340,7 @@ const CampSidebar = ({ camp, range, setRange }: CampSidebarProps) => {
                         <div className='list mt-2'>
                             <div className='flex items-center justify-between'>
                                 <div>
-                                    ${fee.price} x {dayStay} Nights
+                                    ${fee.price} x {dayStay} Night(s)
                                 </div>
                                 <div className='text-button'>
                                     {dayStay} x ${fee.price}
@@ -385,6 +386,7 @@ const CampSidebar = ({ camp, range, setRange }: CampSidebarProps) => {
                             </div>
                         </div>
                         <Button
+                            disabled={dayStay === 0 || guest.adult === 0}
                             type='button'
                             title='Book Camp'
                             variant='btn_green mt-5'

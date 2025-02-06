@@ -76,7 +76,7 @@ const Campitem = ({ data, type }: CampitemProps) => {
                     }}>
                     {wishlistState.wishlistArray.some((item) => item.id === data.id) ? (
                         <>
-                            <HeartIcon className='body2 text-white duration-500' />
+                            <HeartIcon className='body2 text-green-50 duration-500' />
                         </>
                     ) : (
                         <>
