@@ -2,7 +2,7 @@
 
 🏕️ This is a fork application from the JavaScript Mastery Youtube channel with additional features. The original application can be found at https://www.youtube.com/watch?v=cuzw4vL1z5E 🏕️
 
-A ecommerce travel application to explore camping sites around the world. Built in Next.js 14 using Typescript, Tailwind CSS, SaSS and more!
+An eCommerce travel application to explore camping sites around the world. Built in Next.js 14 using Typescript, Tailwind CSS, SaSS and more!
 
 Deployed link:
 
@@ -22,6 +22,7 @@ Deployed link:
 ### Preview:
 
 ![A screenshot of Hilink](preview.png "Preview Image")
+![A screenshot of Hilink](preview_camp.png "Preview Image")
 
 ## Installation:
 
