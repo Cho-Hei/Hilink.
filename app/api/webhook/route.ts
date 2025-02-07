@@ -16,11 +16,15 @@ export async function POST(req: Request, res: Response) {
 
     try {
         if (!process.env.STRIPE_WEBHOOK_SECRET) {
+            console.log("Stripe webhook key is not defined");
             throw new Error("Stripe webhook key is not defined");
         }
         if (!sig) {
+            console.log("Stripe signature is not defined");
             throw new Error("Stripe signature is not defined");
         }
+
+        console.log("Stripe Create Event");
         event = stripe.webhooks.constructEvent(body, sig, process.env.STRIPE_WEBHOOK_SECRET);
     } catch (err) {
         // const errorMessage = err instanceof Error ? err.message : "Unknown error";
