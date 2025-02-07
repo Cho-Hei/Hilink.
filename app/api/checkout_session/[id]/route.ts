@@ -1,9 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
-
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+import Stripe from "stripe";
 
 export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
     try {
+        if (!process.env.STRIPE_SECRET_KEY) {
+            throw new Error("Stripe secret key is not defined");
+        }
+        const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+
         const session_id = params.id;
         // console.log(session_id + " is the ID");
         if (!session_id.startsWith("cs_")) {

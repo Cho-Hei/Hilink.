@@ -2,12 +2,12 @@ import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 
-if (!process.env.STRIPE_SECRET_KEY) {
-    throw new Error("Stripe secret key is not defined");
-}
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-
 export async function POST(req: Request, res: Response) {
+    if (!process.env.STRIPE_SECRET_KEY) {
+        throw new Error("Stripe secret key is not defined");
+    }
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+
     const body = await req.text();
     const headerPayload = headers();
     const sig = headerPayload.get("stripe-signature");
