@@ -1,10 +1,10 @@
-# Hilink
+# Hilink.
 
 🏕️ This is a fork application from the JavaScript Mastery Youtube channel with additional features. The original application can be found at https://www.youtube.com/watch?v=cuzw4vL1z5E 🏕️
 
 An eCommerce travel application to explore camping sites around the world. Built in Next.js 14 using Typescript, Tailwind CSS, SaSS and more!
 
-Deployed link:
+Deployed link: https://hilink.choheitoby.com/
 
 ## Features
 
