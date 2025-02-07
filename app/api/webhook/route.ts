@@ -1,3 +1,4 @@
+import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 
@@ -6,18 +7,10 @@ if (!process.env.STRIPE_SECRET_KEY) {
 }
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-export const config = {
-    api: {
-        bodyParser: false,
-    },
-};
-
 export async function POST(req: Request, res: Response) {
-    // const buf = await buffer(req);
-    // const buf = await buffer(req.body);
     const body = await req.text();
-    // const sig = req.headers["stripe-signature"]!;
-    const sig = req.headers.get("stripe-signature");
+    const headerPayload = headers();
+    const sig = headerPayload.get("stripe-signature");
 
     let event;
 
