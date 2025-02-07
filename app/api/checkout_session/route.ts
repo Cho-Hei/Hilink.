@@ -1,9 +1,13 @@
 import { NextResponse, type NextRequest } from "next/server";
-
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+import Stripe from "stripe";
 
 export async function POST(req: NextRequest) {
     try {
+        if (!process.env.STRIPE_SECRET_KEY) {
+            throw new Error("Stripe secret key is not defined");
+        }
+        const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+
         const item = await req.json();
 
         const lineItems = [];
